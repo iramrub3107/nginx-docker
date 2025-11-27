@@ -12,7 +12,21 @@ docker --version
 
 En mi caso, como se puede observar, ya tenía instalado de antes Docker.
 
-# 2. Crear archivo de configuración del contenedor:
+# 2. Crear estructura de carpetas del sitio web:
+
+Ejecutamos los comandos que se piden para crear las carpetas, y en HTML clonamos el siguiente repositorio de GitHub:
+
+```
+git clone https://github.com/cloudacademy/static-website-example .
+```
+Al ejecutar el git clone, podemos observar cómo se clona el repositorio a la carpeta indicada:
+<img width="937" height="198" alt="image" src="https://github.com/user-attachments/assets/e339d79a-5ed4-459c-9f16-7f7e2ea9cb7c" />
+
+Así nos quedaría la estructura de este proyecto:
+<img width="294" height="247" alt="image" src="https://github.com/user-attachments/assets/6a085fd0-42c6-486a-b74c-b0eba068cdd0" />
+
+
+# 3. Crear archivo de configuración del contenedor y el contenedor:
 
 Como esto lo estoy haciendo desde Windows, he tenido que cambiar un poco el comando que crea el contenedor para que se pueda ejecutar correctamente:
 
@@ -27,7 +41,7 @@ Antes de crearlo, me aseguro de tener abierto Docker Desktop, ya que en Windows 
 
 ---
 
-# 3. Comprobar funcionamiento del contenedor:
+# 4. Comprobar funcionamiento del contenedor:
 
 Una vez crear el contenedor, vamos a mirar si funciona entrando a nuestro localhost:
 
