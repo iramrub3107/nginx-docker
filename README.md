@@ -25,7 +25,7 @@ Al ejecutar el git clone, podemos observar cómo se clona el repositorio a la ca
 <img width="937" height="198" alt="image" src="https://github.com/user-attachments/assets/e339d79a-5ed4-459c-9f16-7f7e2ea9cb7c" />
 
 Así nos quedaría la estructura de este proyecto:
-<img width="294" height="247" alt="image" src="https://github.com/user-attachments/assets/6a085fd0-42c6-486a-b74c-b0eba068cdd0" />
+<img width="594" height="547" alt="image" src="https://github.com/user-attachments/assets/6a085fd0-42c6-486a-b74c-b0eba068cdd0" />
 
 ---
 
