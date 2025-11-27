@@ -76,3 +76,27 @@ Vamos a intentar asociar nuestra IP local (127.0.0.1) al nombre del dominio. Par
 
 <img width="1916" height="1032" alt="Captura de pantalla 2025-11-27 164420" src="https://github.com/user-attachments/assets/fa55845f-68c0-40dd-9f7f-491ca7fecc83" />
 
+Comprobamos si funciona...
+
+<img width="1916" height="1033" alt="image" src="https://github.com/user-attachments/assets/701da4db-ffce-4b84-815c-585a1fdc18c3" />
+
+...y efectivamente, funciona.
+
+También si ponemos esta URL:
+
+http://127-0-0-1.izan.test.nip.io
+
+nos sale nuestro mismo sitio web:
+
+<img width="1920" height="1033" alt="image" src="https://github.com/user-attachments/assets/75db4608-36fe-4941-9f45-c73ae67251e6" />
+
+# 6. Comprobar registros del servidor
+
+Para ello, introducimos en nuestra terminal este comando:
+
+```
+docker logs -f nginx-example
+```
+Y aquí podemos observar todos nuestros logs una vez escrito el comando
+
+<img width="1836" height="936" alt="image" src="https://github.com/user-attachments/assets/aacbfa93-b698-4677-89fb-6baa5f078981" />
