@@ -8,7 +8,7 @@ Para ello, ejecutamos el siguiente comando en nuestra terminal:
 ```
 docker --version
 ```
-<img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/d1ebbbb3-314f-4585-825d-daa0a2b66502" />
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/64a6e3a7-88ae-4ac1-9382-77eff09ea224" />
 
 En mi caso, como se puede observar, ya tenía instalado de antes Docker.
 
@@ -43,7 +43,7 @@ Y aquí tendríamos el archivo creado correctamente
 <img width="1356" height="734" alt="image" src="https://github.com/user-attachments/assets/88b31a4a-76c3-4bc9-8ff2-54dc6deb7180" />
 
 Para configurar el archivo que recién hemos creado, he tenido que cambiar un poco el comando que crea el contenedor para que se pueda ejecutar correctamente:
-(pongo nombre-usuario ya que, como se puede observar, esta práctica se ha hecho en el ordenador de clase y en el mío personal, por lo que el nombre de usuario cambia)
+(pongo nombre-usuario para indicar que hay que poner el nombre de usuario, que en mi caso sería "Izan")
 
 ```
 docker run -d --name nginx-example -p 80:80 ^
@@ -69,3 +69,5 @@ git clone https://github.com/cloudacademy/static-website-example .
 ```
 
 Por ende, nos sale eso por defecto.
+
+# 5. Editar archivo hosts y usar servicio nip.io
