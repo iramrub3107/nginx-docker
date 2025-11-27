@@ -27,8 +27,22 @@ Así nos quedaría la estructura de este proyecto:
 
 
 # 3. Crear archivo de configuración del contenedor y el contenedor:
+Para crear el archivo de configuración de Nginx, como esto lo estoy haciendo desde Windows, he buscado cómo crear archivos desde la terminal y he encontrado esto: 
 
-Como esto lo estoy haciendo desde Windows, he tenido que cambiar un poco el comando que crea el contenedor para que se pueda ejecutar correctamente:
+```
+type nul > nombre_archivo.txt
+```
+
+Por ende, para crear el archivo, pondremos:
+
+```
+type nul > nginx.conf
+```
+Y aquí tendríamos el archivo creado correctamente
+
+<img width="1356" height="734" alt="image" src="https://github.com/user-attachments/assets/88b31a4a-76c3-4bc9-8ff2-54dc6deb7180" />
+
+Para configurar el archivo que recién hemos creado, he tenido que cambiar un poco el comando que crea el contenedor para que se pueda ejecutar correctamente:
 
 ```
 docker run -d --name nginx-example -p 80:80 ^
