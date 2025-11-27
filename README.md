@@ -43,11 +43,12 @@ Y aquí tendríamos el archivo creado correctamente
 <img width="1356" height="734" alt="image" src="https://github.com/user-attachments/assets/88b31a4a-76c3-4bc9-8ff2-54dc6deb7180" />
 
 Para configurar el archivo que recién hemos creado, he tenido que cambiar un poco el comando que crea el contenedor para que se pueda ejecutar correctamente:
+(pongo nombre-usuario ya que, como se puede observar, esta práctica se ha hecho en el ordenador de clase y en el mío personal, por lo que el nombre de usuario cambia)
 
 ```
 docker run -d --name nginx-example -p 80:80 ^
-  -v C:/Users/2DAW-A/nginx/izan.test/html:/usr/share/nginx/html ^
-  -v C:/Users/2DAW-A/nginx/izan.test/conf/nginx.conf:/etc/nginx/conf.d/default.conf ^
+  -v C:/Users/nombre-usuario/nginx/izan.test/html:/usr/share/nginx/html ^
+  -v C:/Users/nombre-usuario/nginx/izan.test/conf/nginx.conf:/etc/nginx/conf.d/default.conf ^
   nginx:latest
 ```
 
