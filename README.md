@@ -71,3 +71,8 @@ git clone https://github.com/cloudacademy/static-website-example .
 Por ende, nos sale eso por defecto.
 
 # 5. Editar archivo hosts y usar servicio nip.io
+
+Vamos a intentar asociar nuestra IP local (127.0.0.1) al nombre del dominio. Para ello, nos iremos a VSCode y editaremos nuestro archivo hosts desde ahí escribiendo lo que pone en la captura de (lo tengo en C:\Windows\System32\drivers\etc\hosts al ser de Windows)
+
+<img width="1916" height="1032" alt="Captura de pantalla 2025-11-27 164420" src="https://github.com/user-attachments/assets/fa55845f-68c0-40dd-9f7f-491ca7fecc83" />
+
