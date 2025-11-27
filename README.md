@@ -145,7 +145,53 @@ Ahora vamos a modificar el contenido del contenedor. Para ello, nos iremos al ar
 
 <img width="1196" height="791" alt="image" src="https://github.com/user-attachments/assets/8b90efe8-07db-47c1-b711-c8ec41a2f842" />
 
-Aquí, por ejemplo, vamos a cambiar el nombre del servidor y le vamos a poner 
+Aquí, por ejemplo, vamos a cambiar el nombre del servidor y le vamos a poner "patata.test"
 
+<img width="1199" height="792" alt="image" src="https://github.com/user-attachments/assets/032ef948-a313-40ee-9eb5-8a80f9e28993" />
+
+Y una vez hechos los cambios, guardamos y nos vamos a la terminal a ejecutar ```docker restart nginx-example```
+
+<img width="1106" height="622" alt="image" src="https://github.com/user-attachments/assets/af673fa6-9fe7-4ef0-a8f1-7ea22b5b2716" />
+
+Por último, vamos a eliminar nuestro contenedor. Para ello: primero, lo vamos a parar:
+
+<img width="1107" height="624" alt="image" src="https://github.com/user-attachments/assets/341adfb3-7a6b-4c07-b1b0-8be8c920a1e9" />
+
+Y, a continuación, lo vamos a borrar escribiendo ```docker rm nginx-example```
+
+<img width="1111" height="619" alt="image" src="https://github.com/user-attachments/assets/429389da-13ee-4717-aa1b-2eb5502ee710" />
+
+También nos aseguraremos de que el contenedor se ha borrado mirándolo en el Docker Desktop
+
+<img width="1442" height="709" alt="image" src="https://github.com/user-attachments/assets/aad8de6e-77ce-439d-9e41-74ca4e3c3e45" />
+
+---
+
+# 8. Uso de docker-compose
+
+Hay una forma más rápida de hacer contenedores **usando docker-compose**. Para ello, vamos a crear un archivo docker-compose.yml en la carpeta "izan.test", y le adjuntaremos el siguiente contenido:
+
+<img width="563" height="152" alt="image" src="https://github.com/user-attachments/assets/4d4441b1-b9f5-4e74-90de-04b311968908" />
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/a7062c32-f048-4a5f-95ef-5de624726055" />
+
+Una vez lo tenemos, vamos a ver si funciona. Para ello, vamos a ejecutarlo escribiendo este comando:
+
+```
+docker-compose up -d
+```
+
+Y como podemos observar, el docker-compose se ha inicializado correctamente
+
+<img width="1109" height="273" alt="image" src="https://github.com/user-attachments/assets/8eb12b09-8bed-4880-a829-61116f835996" />
+
+Con el comando ```docker-compose logs -f``` podemos ver todos los logs de nuestro docker-compose, en donde sale la siguiente información:
+
+<img width="1909" height="779" alt="image" src="https://github.com/user-attachments/assets/bbe7c6e9-9404-4950-9787-2aa051d5a7be" />
+
+Y por último, con ```docker-compose down``` detenemos los contenedores:
+
+<img width="1101" height="152" alt="image" src="https://github.com/user-attachments/assets/18979b2f-78eb-44f7-ad1c-0e75bc65d162" />
+
+Y podemos observar que se ha detenido correctamente.
 
 
