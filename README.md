@@ -264,3 +264,14 @@ Creamos el archivo y, a continuación, lo editamos.
 <img width="1098" height="89" alt="image" src="https://github.com/user-attachments/assets/e2eddffe-082e-4895-bc8f-145664adba2a" />
 
 <img width="770" height="536" alt="image" src="https://github.com/user-attachments/assets/acc3dcf6-093c-403e-ba4a-25fb3616ce90" />
+
+Y, después, ejecutamos este comando:
+
+```
+docker run -d --name nginx-example ^
+-p 8080:80 ^
+-v "%cd%\conf\example.test.conf:/etc/nginx/conf.d/default.conf" ^
+-v "%cd%\conf\htpasswd:/etc/nginx/.htpasswd" ^
+-v "%cd%\html:/usr/share/nginx/html" ^
+nginx
+```
