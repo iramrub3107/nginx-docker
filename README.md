@@ -1,5 +1,4 @@
-# nginx-docker
-Nginx I: Instalación y configuración de servidor web en DOCKER | Hecho por Izan Ramos Rubio
+# Nginx I: Instalación y configuración de servidor web en DOCKER | Hecho por Izan Ramos Rubio
 
 # 1. Comprobar que Docker está instalado en el PC:
 
@@ -193,5 +192,3 @@ Y por último, con ```docker-compose down``` detenemos los contenedores:
 <img width="1101" height="152" alt="image" src="https://github.com/user-attachments/assets/18979b2f-78eb-44f7-ad1c-0e75bc65d162" />
 
 Y podemos observar que se ha detenido correctamente.
-
-
