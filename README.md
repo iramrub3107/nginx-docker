@@ -281,6 +281,3 @@ docker run -d --name nginx-example ^
 
 # 1.4: Probando la nueva configuración
 
-1. Primero, tenemos que comprobar si podemos acceder a nuestro host. En mi caso, directamente no me deja, me "rechaza" la conexión. Aún así, podemos verificar una cosa: que funciona
-
-<img width="1918" height="1035" alt="image" src="https://github.com/user-attachments/assets/8e588616-5711-4c13-a04a-374f3dba734c" />
