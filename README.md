@@ -281,3 +281,50 @@ docker run -d --name nginx-example ^
 
 # 1.4: Probando la nueva configuración
 
+En esta captura, como se puede observar, al entrar al servidor me dice que ha rechazado la conexión, por lo que, técnicamente, se podría decir que funciona.
+
+<img width="1918" height="1035" alt="Captura de pantalla 2025-12-02 203802" src="https://github.com/user-attachments/assets/a5a53505-7453-4518-96f9-0385cbf70b20" />
+
+---
+
+# 2. y 3. TAREAS
+
+#2.1: Intentos de login
+
+Aquí se ven todos los logs que han habido en el contenedor:
+
+<img width="1110" height="775" alt="image" src="https://github.com/user-attachments/assets/5ed1c4ea-4ee2-449a-bfdd-ec40fc3c8dc7" />
+
+#2.2: Proteger solamente contact.html
+
+Para ello, vamos a crear primero el archivo y le vamos a meter algo de contenido:
+
+<img width="1917" height="1032" alt="image" src="https://github.com/user-attachments/assets/4c39ce1d-db66-42d4-9f3e-0d02b1d0f9b6" />
+
+A continuación, vamos a editar un poco nuestro archivo de configuración para que se pueda acceder a contact.html exclusivamente con contraseña
+
+<img width="1916" height="1007" alt="image" src="https://github.com/user-attachments/assets/c13e5fb3-abf5-4482-ab16-56e586bdd544" />
+
+Reiniciamos el contenedor y comprobamos que funcione:
+
+<img width="1108" height="256" alt="image" src="https://github.com/user-attachments/assets/63b3ac26-5bf4-44a8-b91b-5c227e916aa2" />
+
+# 2.3: Combinación por IP y autenticación
+
+Primero, vamos a cambiar un poco el archivo de configuración, y meteremos una location /api:
+
+<img width="1256" height="941" alt="image" src="https://github.com/user-attachments/assets/bbea058b-6c55-491a-9656-ac79df7ebb2c" />
+
+Dentro, podemos encontrar dos allows, que son básicamente los de nuestro PC, y un deny, que es para el resto. Juntando todo el código (como en la captura), podemos tener hecho este ejercicio.
+
+# 3.1: Bloquear acceso por IP
+
+Esto es tan sencillo como crear otra "ruta" en la cual bloqueemos el acceso a la carpeta raíz. Para ello, vamos a crear esta "ruta" y simplemente vamos a cambiar "allow" por "deny" en nuestra IP local, y al resto de IPs, le pondremos "allow":
+
+<img width="1257" height="935" alt="image" src="https://github.com/user-attachments/assets/4576d2be-b7b8-4328-a98a-42d94ff2b61c" />
+
+#3.2: IP válida y usuario también (al mismo tiempo)
+
+Para esto, pondremos este código sobre la misma "ruta":
+
+<img width="1260" height="939" alt="image" src="https://github.com/user-attachments/assets/77d96cd0-06d6-49e4-8c7f-aaac4144bc11" />
