@@ -265,13 +265,22 @@ Creamos el archivo y, a continuación, lo editamos.
 
 <img width="770" height="536" alt="image" src="https://github.com/user-attachments/assets/acc3dcf6-093c-403e-ba4a-25fb3616ce90" />
 
-Y, después, ejecutamos este comando:
+Y, después, ejecutamos este comando (ha sido adaptado para poder usarse en la terminal de Windows, que es la que estoy usando):
 
 ```
 docker run -d --name nginx-example ^
--p 8080:80 ^
--v "%cd%\conf\example.test.conf:/etc/nginx/conf.d/default.conf" ^
--v "%cd%\conf\htpasswd:/etc/nginx/.htpasswd" ^
--v "%cd%\html:/usr/share/nginx/html" ^
-nginx
+ -p 8080:80 ^
+ -v "%cd%\conf:/etc/nginx/conf" ^
+ -v "%cd%\html:/usr/share/nginx/html" ^
+ nginx
+
 ```
+<img width="643" height="152" alt="image" src="https://github.com/user-attachments/assets/ab917beb-a8e8-4ea5-85ed-190cf9117479" />
+
+---
+
+# 1.4: Probando la nueva configuración
+
+1. Primero, tenemos que comprobar si podemos acceder a nuestro host. En mi caso, directamente no me deja, me "rechaza" la conexión. Aún así, podemos verificar una cosa: que funciona
+
+<img width="1918" height="1035" alt="image" src="https://github.com/user-attachments/assets/8e588616-5711-4c13-a04a-374f3dba734c" />
