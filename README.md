@@ -229,17 +229,38 @@ docker run --rm stakater/ssl-certs-generator openssl passwd -apr1 'tupassword' >
 Verificamos que la contraseña encriptada se ha añadido correctamente a nuestro fichero...
 
 <img width="771" height="492" alt="image" src="https://github.com/user-attachments/assets/c89dfe21-d22c-405e-857f-38cbf5f6faf3" />
+<img width="771" height="532" alt="image" src="https://github.com/user-attachments/assets/b440f4a8-0790-402b-b34f-8578c16c78d4" />
 
 ...y efectivamente, se ha añadido correctamente la contraseña al fichero, sin dejar espacios ni cosas raras.
 
 A continuación, vamos a repetir este mismo proceso, pero con otro usuario: ramos (mi primer apellido, como se indica en la práctica)
 
 1. Añadimos el usuario
+
 <img width="770" height="494" alt="image" src="https://github.com/user-attachments/assets/fe81f971-d8f1-4b7c-90e7-4018333ebf5d" />
+
 2. Creamos la contraseña encriptada:
+
 <img width="1108" height="616" alt="image" src="https://github.com/user-attachments/assets/8428694e-20f8-4433-ad80-43e50742f6a9" />
+
 3. Nos aseguramos de que se la contraseña se ha añadido correctamente:
+
 <img width="769" height="492" alt="image" src="https://github.com/user-attachments/assets/eea098aa-e1fb-4755-b5ae-eff0b9087dce" />
+
 Y como se puede observar, la contraseña encriptada me la ha introducido, pero no correctamente. Para esto, hacemos que la contraseña esté en la misma línea que el usuario (sin espacios), y ya está. Es algo que nosotros mismos podemos arreglar sin problema.
+
 <img width="768" height="490" alt="image" src="https://github.com/user-attachments/assets/a856b4cd-bec1-4869-ac13-a3a748607723" />
-Guardamos el fichero y ya.
+
+Hecho el nuevo usuario, solamente guardaremos el fichero y ya.
+
+---
+
+# 1.3: Configuración del contenedor Nginx para la autenticación básica:
+
+Ahora editaremos el archivo de configuración de Nginx, el cual pondremos este comando en la terminal para crearlo: ```docker run --rm --entrypoint=cat nginx /etc/nginx/conf.d/default.conf > example.izan.conf```
+
+Creamos el archivo y, a continuación, lo editamos.
+
+<img width="1098" height="89" alt="image" src="https://github.com/user-attachments/assets/e2eddffe-082e-4895-bc8f-145664adba2a" />
+
+<img width="770" height="536" alt="image" src="https://github.com/user-attachments/assets/acc3dcf6-093c-403e-ba4a-25fb3616ce90" />
