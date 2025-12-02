@@ -192,3 +192,54 @@ Y por último, con ```docker-compose down``` detenemos los contenedores:
 <img width="1101" height="152" alt="image" src="https://github.com/user-attachments/assets/18979b2f-78eb-44f7-ad1c-0e75bc65d162" />
 
 Y podemos observar que se ha detenido correctamente.
+
+---
+
+# Nginx II: Autenticación con Docker | Hecho por Izan Ramos Rubio
+
+# 1.1: Paquetes necesarios
+
+Para esta práctica necesitamos OpenSSL, por lo que nos lo instalaremos usando este comando en la terminal:
+
+```
+docker pull stakater/ssl-certs-generator
+```
+Lo ejecutamos en la terminal y nos esperamos a que se instale.
+
+<img width="1112" height="619" alt="image" src="https://github.com/user-attachments/assets/087d7ed8-cfc1-4275-bb8a-5e709b12d282" />
+
+---
+
+# 1.2: Creación de usuarios y contraseñas para el acceso web:
+
+Primero, vamos a hacer un archvo htpasswd, y después introduciremos "izan:" en él
+
+<img width="1103" height="240" alt="image" src="https://github.com/user-attachments/assets/9b64921f-26db-4311-9374-a0295772f5cc" />
+<img width="767" height="486" alt="image" src="https://github.com/user-attachments/assets/179c1e5f-34ff-48c2-a72e-10983a8379c8" />
+
+He puesto "izan:" dentro del htpasswd porque, a continuación, toca crear un password cifrado para este usuario.
+Para ello, ejecutaremos este comando en la terminal:
+
+```
+docker run --rm stakater/ssl-certs-generator openssl passwd -apr1 'tupassword' >> htpasswd
+```
+
+<img width="1111" height="95" alt="image" src="https://github.com/user-attachments/assets/d7892e61-2d1b-445f-b839-6e855a71a990" />
+
+Verificamos que la contraseña encriptada se ha añadido correctamente a nuestro fichero...
+
+<img width="771" height="492" alt="image" src="https://github.com/user-attachments/assets/c89dfe21-d22c-405e-857f-38cbf5f6faf3" />
+
+...y efectivamente, se ha añadido correctamente la contraseña al fichero, sin dejar espacios ni cosas raras.
+
+A continuación, vamos a repetir este mismo proceso, pero con otro usuario: ramos (mi primer apellido, como se indica en la práctica)
+
+1. Añadimos el usuario
+<img width="770" height="494" alt="image" src="https://github.com/user-attachments/assets/fe81f971-d8f1-4b7c-90e7-4018333ebf5d" />
+2. Creamos la contraseña encriptada:
+<img width="1108" height="616" alt="image" src="https://github.com/user-attachments/assets/8428694e-20f8-4433-ad80-43e50742f6a9" />
+3. Nos aseguramos de que se la contraseña se ha añadido correctamente:
+<img width="769" height="492" alt="image" src="https://github.com/user-attachments/assets/eea098aa-e1fb-4755-b5ae-eff0b9087dce" />
+Y como se puede observar, la contraseña encriptada me la ha introducido, pero no correctamente. Para esto, hacemos que la contraseña esté en la misma línea que el usuario (sin espacios), y ya está. Es algo que nosotros mismos podemos arreglar sin problema.
+<img width="768" height="490" alt="image" src="https://github.com/user-attachments/assets/a856b4cd-bec1-4869-ac13-a3a748607723" />
+Guardamos el fichero y ya.
