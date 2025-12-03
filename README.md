@@ -328,3 +328,59 @@ Esto es tan sencillo como crear otra "ruta" en la cual bloqueemos el acceso a la
 Para esto, pondremos este código sobre la misma "ruta":
 
 <img width="1260" height="939" alt="image" src="https://github.com/user-attachments/assets/77d96cd0-06d6-49e4-8c7f-aaac4144bc11" />
+
+---
+
+# Nginx III: Acceso seguro con Nginx Docker | Hecho por Izan Ramos Rubio
+
+# 1. Configuración de Nginx:
+# 1.1. Nombre del servidor:
+
+Para ello, vamos a establecer una directiva server_name dentro de nuestro archivo de configuración:
+
+<img width="1260" height="939" alt="image" src="https://github.com/user-attachments/assets/cf8d90ed-53e6-43ce-be61-64782fd12f0e" />
+
+Lo subrayado ha sido lo único que he tenido que añadir al fichero para poder hacer este paso.
+
+# 2. Generar un certificado autofirmado:
+
+Para ello, primero, vamos a escribir en la terminal este comando:
+
+```
+docker pull stakater/ssl-certs-generator
+```
+Esto nos descargará el generador de certificados SSL.
+
+<img width="1096" height="184" alt="image" src="https://github.com/user-attachments/assets/edb61802-52ee-4645-8f04-c88f060039d6" />
+
+Y, a continuación, crearemos la clave y el certificado SSL con ```docker run -v .:/certs stakater/ssl-certs-generator```
+
+<img width="1106" height="829" alt="image" src="https://github.com/user-attachments/assets/8692e07d-cf8a-4738-bd19-429dba7fea5d" />
+
+# 3. Configuración:
+
+Ahora que ya tenemos nuestro certificado SSL, vamos a introducírselo a nuestro archivo de configuración. Para ello, vamos a editar este archivo e introduciremos el siguiente código:
+Hay que tener en cuenta que, como esto lo estoy haciendo desde Windows, he tenido que "adaptar" un poco el archivo de configuración para que todo pueda funcionar bien.
+
+<img width="1257" height="936" alt="image" src="https://github.com/user-attachments/assets/8ff77171-3f9f-4fef-a564-c580ff77713d" />
+
+# 3.1. Mapeo de puertos y montaje de volumen con los certificados
+
+Finalmente, para hacer este mapeo, vamos a ejecutar el siguiente comando en la terminal:
+
+```
+docker run -d ^
+  --name nginx-exampletest ^
+  -p 80:80 -p 443:443 ^
+  -v "C:\Users\Izan\nginx\izan.test\conf\izan.test.conf:/etc/nginx/conf.d/default.conf:ro" ^
+  -v "C:\Users\Izan\nginx\izan.test\certs\izan.test.crt:/etc/ssl/certs/izan.test.crt:ro" ^
+  -v "C:\Users\Izan\nginx\izan.test\certs\izan.test.key:/etc/ssl/private/izan.test.key:ro" ^
+  -v "C:\Users\Izan\nginx\izan.test\html:/var/www/izan.test/html:ro" ^
+  nginx:latest
+```
+
+El comando lo he tenido que adaptar un poco para que me funcionase correctamente y, como se puede observar, funciona
+
+<img width="1093" height="203" alt="image" src="https://github.com/user-attachments/assets/a28aab1f-9aea-4cb9-9a51-f4267ccb3ef6" />
+
+
